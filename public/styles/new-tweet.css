@@ -1,0 +1,49 @@
+main {
+  display: flex;
+   justify-content: center;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tweet-text {
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #545149;
+  border-width: 5px; 
+  background: none;
+  width: 500px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  color: #545149;
+
+}
+
+button {
+  background-color: #4056a1;
+  font-family: 'Bungee', sans-serif;
+  color: #fff;
+  border: none;
+  padding: 5px 15px 5px 15px;
+}
+
+#buttoncounter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
