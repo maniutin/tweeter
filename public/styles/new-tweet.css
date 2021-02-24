@@ -1,14 +1,21 @@
 main {
   display: flex;
-   justify-content: center;
+  justify-content: center;
 }
 
+main.container{
+  width: 75%;
+}
 .new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
-
+.tweet-form{
+  width: 100%;
+}
 #tweet-text {
   overflow: auto;
   outline: none;
@@ -22,11 +29,10 @@ main {
   border-color: #545149;
   border-width: 5px; 
   background: none;
-  width: 500px;
+  width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   color: #545149;
-
 }
 
 button {

@@ -6,6 +6,8 @@ nav {
   padding: 1.5em;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0px;
 }
 nav span {
   font-family: 'Bungee', sans-serif;

@@ -22,6 +22,9 @@
     
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+   
+    <!-- Tweet CSS -->
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +46,7 @@
     <nav>
       <span>tweeter</span>
     </nav>
-    <header>
+    <header class="user-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -56,7 +59,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form method="POST" action="/tweets/" class="tweet-form">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div id="buttoncounter">
@@ -65,16 +68,98 @@
           </div>
         </form>
       </section>
-      <article class="tweet">
-        <header>
-          
-
-        </header>
-        <footer>
-
-
-        </footer>
-      </article>
     </main>
+    <article class="tweet">
+      <header class="tweet-header">
+        <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+            <p>Your Name</p>
+        </div>
+        <div class="handle">
+          <p>@yourname</p>
+        </div>
+      </header>
+      <div class="tweet-content">
+        <p>Whatever People Say I Am, That's What I'm Not🥶🐵</p>
+      </div>
+      <footer class="tweet-footer">
+        <p>5,510 days ago</p>
+        <div class="icons">
+          <img src="/images/flag.png"> 
+          <img src="/images/repost.png"> 
+          <img src="/images/like.png"> 
+        </div>
+
+      </footer>
+    </article>
+    <article class="tweet">
+      <header class="tweet-header">
+        <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+            <p>Your Name</p>
+        </div>
+        <div class="handle">
+          <p>@yourname</p>
+        </div>
+      </header>
+      <div class="tweet-content">
+        <p>Whatever People Say I Am, That's What I'm Not🥶🐵</p>
+      </div>
+      <footer class="tweet-footer">
+        <p>5,510 days ago</p>
+        <div class="icons">
+          <img src="/images/flag.png"> 
+          <img src="/images/repost.png"> 
+          <img src="/images/like.png"> 
+        </div>
+
+      </footer>
+    </article>
+    <article class="tweet">
+      <header class="tweet-header">
+        <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+            <p>Your Name</p>
+        </div>
+        <div class="handle">
+          <p>@yourname</p>
+        </div>
+      </header>
+      <div class="tweet-content">
+        <p>Whatever People Say I Am, That's What I'm Not🥶🐵</p>
+      </div>
+      <footer class="tweet-footer">
+        <p>5,510 days ago</p>
+        <div class="icons">
+          <img src="/images/flag.png"> 
+          <img src="/images/repost.png"> 
+          <img src="/images/like.png"> 
+        </div>
+
+      </footer>
+    </article>
+    <article class="tweet">
+      <header class="tweet-header">
+        <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+            <p>Your Name</p>
+        </div>
+        <div class="handle">
+          <p>@yourname</p>
+        </div>
+      </header>
+      <div class="tweet-content">
+        <p>Whatever People Say I Am, That's What I'm Not🥶🐵</p>
+      </div>
+      <footer class="tweet-footer">
+        <p>5,510 days ago</p>
+        <div class="icons">
+          <img src="/images/flag.png"> 
+          <img src="/images/repost.png"> 
+          <img src="/images/like.png"> 
+        </div>
+
+      </footer>
+    </article>
   </body>
 </html>
