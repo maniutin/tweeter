@@ -1,7 +1,8 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056a1;
+  background-color: #f09c4d;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: #ffffff;
   padding: 1.5em;
   display: flex;
@@ -19,10 +20,9 @@ nav span {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
-  
-}
 
 @media only screen and (min-width: 1024px) {
-
+nav {
+  background-color: #4056a1;
+}
 }
