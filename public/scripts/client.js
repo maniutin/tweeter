@@ -50,7 +50,8 @@ $('.tweet-form').on('submit', function (event) {
   method: 'POST', 
   data: $(this).serialize(),
   })
-  .then(() => location.reload())
+  .then(() => {$(".all-tweets").empty()})
+  .then(() => {loadTweets()})
 
     
   }
@@ -67,6 +68,6 @@ $('.tweet-form').on('submit', function (event) {
   })
   }
 
-  loadTweets();
+  // loadTweets();
 });
 
