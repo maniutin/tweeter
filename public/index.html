@@ -26,6 +26,9 @@
     <!-- Tweet CSS -->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     
+    <!-- Error CSS -->
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -62,6 +65,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error">
+        </div>
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" class="tweet-form">
           <!-- <label for="tweet-text">What are you humming about?</label> -->

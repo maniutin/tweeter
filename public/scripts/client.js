@@ -39,12 +39,18 @@ $(document).ready(function() {
       $('.all-tweets').append(createTweetElement(tweet));
     }
   };
+  $(".error").hide();
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
     if (!$('#tweet-text').val()) {
-      alert("Hold yo horses!");
+      $(".error").slideDown("fast", function (){
+        $(".error").html("You can't submit an empty tweet!");
+      })
     } else if ($('#tweet-text').val().length > 140) {
-      alert("Keep it short!");
+      $(".error").slideDown("fast", function (){
+        $(".error").html("This tweet is waaaaay too long!");
+      })
+      
     } else {
       $("#tweet-text").val($("<div>").text($('#tweet-text').val()).html())
       $.ajax({url: '/tweets',
