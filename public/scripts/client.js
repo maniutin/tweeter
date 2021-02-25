@@ -54,6 +54,7 @@ $(document).ready(function() {
         .then(() => {
           loadTweets();
           $(".tweet-form").trigger("reset");
+          $(".counter").html("140");
         });
       }
   });
