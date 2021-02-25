@@ -32,6 +32,18 @@ body {
  }
 
  main {
-   width: 90%;
+   /* width: 90%; */
    background-color: #f4f1ec;
  }
+
+ .user-container{
+   width: 100%;
+ }
+
+ @media only screen and (min-width: 1024px) {
+  .user-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  }
