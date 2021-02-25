@@ -29,10 +29,8 @@ $(document).ready(function() {
     }
   ]
 
-  const createTweetElement = function (tweetObj){
-    let rightNow = new Date(tweetObj.created_at);
-    let res = rightNow.toISOString().slice(0,10).replace(/-/g,"");
-    let createdAt = moment(res, "YYYYMMDD").fromNow();
+  const createTweetElement = function (tweetObj){  
+    let createdAt = moment(tweetObj.created_at).fromNow();
     const newElement = `<article class="tweet">
     <header class="tweet-header">
       <div class="avatar">
@@ -65,12 +63,18 @@ const renderTweets = function(tweets) {
   }
 }
 
- $('.tweet-form').on('submit', function (event) {
-  event.preventDefault();
+$('.tweet-form').on('submit', function (event) {
+   event.preventDefault();
+  if (!$('#tweet-text').val()){
+    alert("Hold yo horses!")
+  } else if ($('#tweet-text').val().length > 140){
+    alert("Keep it short!")
+  } else {
   $.ajax({url: '/tweets', 
   method: 'POST', 
   data: $(this).serialize(), 
   });
+  }
  })
 
  const loadTweets = function(){
@@ -78,11 +82,11 @@ const renderTweets = function(tweets) {
     url: '/tweets',
     type: "GET",
     dataType: "json",
-    success: function (data) {
-      storageArr.push(data);
-    }
   })
-  .then((response) => renderTweets(response));
+  .then((response) => {
+    renderTweets(response)
+    // console.log(response)
+  });
   }
   loadTweets();
 });
