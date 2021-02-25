@@ -36,7 +36,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     $(".all-tweets").empty();
     for (let tweet of tweets) {
-      $('.all-tweets').append(createTweetElement(tweet));
+      $('.all-tweets').prepend(createTweetElement(tweet));
     }
   };
   $(".error").hide();
