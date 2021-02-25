@@ -47,6 +47,9 @@ div.avatar img{
   margin-right: 10px;
   padding: 10px;
 }
+.tweet-content p{
+  word-wrap: break-word;
+}
 
 .tweet-footer {
   display: flex;
