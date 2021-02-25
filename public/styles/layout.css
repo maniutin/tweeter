@@ -32,9 +32,13 @@ body {
  }
 
  main {
-   /* width: 90%; */
    background-color: #f4f1ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
  }
+
 
  .user-container{
    width: 100%;
