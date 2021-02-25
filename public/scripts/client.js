@@ -28,10 +28,10 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ]
-  
+
   const createTweetElement = function (tweetObj){
-    var rightNow = new Date(tweetObj.created_at);
-    var res = rightNow.toISOString().slice(0,10).replace(/-/g,"");
+    let rightNow = new Date(tweetObj.created_at);
+    let res = rightNow.toISOString().slice(0,10).replace(/-/g,"");
     let createdAt = moment(res, "YYYYMMDD").fromNow();
     const newElement = `<article class="tweet">
     <header class="tweet-header">
@@ -59,11 +59,31 @@ $(document).ready(function() {
   return newElement;
   }
 
+const renderTweets = function(tweets) {
+  for (let tweet of tweets){
+    $('.all-tweets').append(createTweetElement(tweet));
+  }
+}
 
-  
-  const $tweet = createTweetElement(tweetData);
-  
-  // Test / driver code (temporary)
-  $('.all-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+ $('.tweet-form').on('submit', function (event) {
+  event.preventDefault();
+  $.ajax({url: '/tweets', 
+  method: 'POST', 
+  data: $(this).serialize(), 
+  });
+ })
+
+ const loadTweets = function(){
+  $.ajax({
+    url: '/tweets',
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+      storageArr.push(data);
+    }
+  })
+  .then((response) => renderTweets(response));
+  }
+  loadTweets();
 });
 
