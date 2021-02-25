@@ -5,7 +5,7 @@
  */
 $(document).ready(function() {
 
-  const createTweetElement = function (tweetObj){  
+  const createTweetElement = function(tweetObj) {
     let createdAt = moment(tweetObj.created_at).fromNow();
     const newElement = `<article class="tweet">
     <header class="tweet-header">
@@ -29,43 +29,44 @@ $(document).ready(function() {
       </div>
   
     </footer>
-  </article>`
-  return newElement;
-  }
+  </article>`;
+    return newElement;
+  };
 
-const renderTweets = function(tweets) {
-  $(".all-tweets").empty()
-  for (let tweet of tweets){
-    $('.all-tweets').append(createTweetElement(tweet));
-  }
-}
+  const renderTweets = function(tweets) {
+    $(".all-tweets").empty();
+    for (let tweet of tweets) {
+      $('.all-tweets').append(createTweetElement(tweet));
+    }
+  };
+  $('.tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    if (!$('#tweet-text').val()) {
+      alert("Hold yo horses!");
+    } else if ($('#tweet-text').val().length > 140) {
+      alert("Keep it short!");
+    } else {
+      $("#tweet-text").val($("<div>").text($('#tweet-text').val()).html())
+      $.ajax({url: '/tweets',
+        method: 'POST',
+        data: $(this).serialize(),
+      })
+        .then(() => {
+          loadTweets();
+          
+        });
+      }
+  });
 
-$('.tweet-form').on('submit', function (event) {
-   event.preventDefault();
-  if (!$('#tweet-text').val()){
-    alert("Hold yo horses!")
-  } else if ($('#tweet-text').val().length > 140){
-    alert("Keep it short!")
-  } else {
-  $.ajax({url: '/tweets', 
-  method: 'POST', 
-  data: $(this).serialize(),
-  })
-  .then(() => {loadTweets()})
-
-    
-  }
- })
-
- const loadTweets = function(){
+  const loadTweets = function() {
     $.ajax({
-    url: '/tweets',
-    type: "GET",
-    dataType: "json",
+      url: '/tweets',
+      type: "GET",
+      dataType: "json",
     })
-  .then((response) => {
-    return renderTweets(response)
-  })
-  }
+      .then((response) => {
+        return renderTweets(response);
+      });
+  };
 });
 
