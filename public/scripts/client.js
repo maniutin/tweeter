@@ -53,7 +53,7 @@ $(document).ready(function() {
       })
         .then(() => {
           loadTweets();
-          
+          $(".tweet-form").trigger("reset");
         });
       }
   });
