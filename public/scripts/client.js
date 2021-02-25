@@ -75,5 +75,6 @@ $(document).ready(function() {
         return renderTweets(response);
       });
   };
+  loadTweets();
 });
 
