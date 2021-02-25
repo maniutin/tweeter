@@ -34,6 +34,7 @@ $(document).ready(function() {
   }
 
 const renderTweets = function(tweets) {
+  $(".all-tweets").empty()
   for (let tweet of tweets){
     $('.all-tweets').append(createTweetElement(tweet));
   }
@@ -50,7 +51,6 @@ $('.tweet-form').on('submit', function (event) {
   method: 'POST', 
   data: $(this).serialize(),
   })
-  .then(() => {$(".all-tweets").empty()})
   .then(() => {loadTweets()})
 
     
@@ -67,7 +67,5 @@ $('.tweet-form').on('submit', function (event) {
     return renderTweets(response)
   })
   }
-
-  // loadTweets();
 });
 
