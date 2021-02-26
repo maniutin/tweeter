@@ -1,7 +1,6 @@
 $(document).ready(function() {
-  // --- our code goes here ---
+// implements the character counter
   $("#tweet-text").on('keyup', function() {
-    // console.log($("#tweet-text").val().length+1); 
     let $input = $(this);
     let $form = $input.closest('form');
     let $counter = $form.find('.counter');

@@ -3,11 +3,13 @@
   flex-direction: column;
   align-items: center;
 }
+
 .tweet {
   width: 100%;
   border: 5px solid #545149;
   margin-bottom: 20px;
 }
+
 .tweet:hover {
   box-shadow: 5px 5px 0 0 #c6cbe1;
 }
@@ -16,10 +18,15 @@
   visibility: visible;
 }
 
+.tweet:hover .icons{
+  visibility: visible;
+}
+
 .tweet-header {
   display: flex;
   justify-content: space-between;
 }
+
 div.avatar{
   display: flex;
   flex-direction: row;
@@ -27,11 +34,11 @@ div.avatar{
   font-family: 'Source Sans Pro', sans-serif;
   
 }
+
 div.avatar img{
   width: 75px;
   margin: 10px;
 }
-
 
 .handle{
   visibility: hidden;
@@ -40,6 +47,9 @@ div.avatar img{
   color: #c6cbe1;
 }
 
+.icons {
+  visibility: hidden;
+}
 
 .tweet-content {
   border-bottom: 5px solid #545149;
@@ -47,6 +57,7 @@ div.avatar img{
   margin-right: 10px;
   padding: 10px;
 }
+
 .tweet-content p{
   word-wrap: break-word;
 }
@@ -66,7 +77,6 @@ div.avatar img{
 }
 
 @media only screen and (min-width: 1024px) {
-
   .all-tweets{
     width: 50vw;
   }

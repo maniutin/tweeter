@@ -12,14 +12,15 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
 nav span {
   font-family: 'Bungee', sans-serif;
 }
+
 #new-tweet-btn{
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }
-
 
 @media only screen and (min-width: 1024px) {
 nav {

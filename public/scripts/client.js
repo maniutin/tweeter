@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-
+// create tweet element on the page
   const createTweetElement = function(tweetObj) {
     let createdAt = moment(tweetObj.created_at).fromNow();
     const newElement = `<article class="tweet">
@@ -27,19 +27,20 @@ $(document).ready(function() {
         <img src="/images/repost.png"> 
         <img src="/images/like.png"> 
       </div>
-  
     </footer>
   </article>`;
     return newElement;
   };
-
+// render tweets on the page in a reverse chronological order
   const renderTweets = function(tweets) {
     $(".all-tweets").empty();
     for (let tweet of tweets) {
       $('.all-tweets').prepend(createTweetElement(tweet));
     }
   };
+// keep the error box hidden
   $(".error").hide();
+// add listener for the submit form and make a post request to /tweets
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
     if (!$('#tweet-text').val()) {
@@ -50,7 +51,6 @@ $(document).ready(function() {
       $(".error").slideDown("fast", function (){
         $(".error").html("This tweet is waaaaay too long!");
       })
-      
     } else {
       $("#tweet-text").val($("<div>").text($('#tweet-text').val()).html())
       $.ajax({url: '/tweets',
@@ -64,7 +64,7 @@ $(document).ready(function() {
         });
       }
   });
-
+// get tweets from the json database and call renderTweets
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
